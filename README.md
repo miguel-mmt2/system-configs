@@ -1,15 +1,13 @@
 # Development Environment Setup
 
-This repository serves as a version-controlled backup of my development environment. It includes configuration files, package lists, editor settings, and automation scripts to streamline machine setup and ensure consistency across systems.
-
+This repository serves as a version-controlled backup of my development environment. It includes configuration files, package lists, editor settings, and automation scripts to streamline machine setup.
 ## Contents
 
 This repository includes:
 
 - Homebrew package list (homebrew/Brewfile)
 - Visual Studio Code settings and extensions
-- Terminal configuration files (.zshrc, .bash_profile, .aliases)
-- Global Git configuration (.gitconfig)
+- Terminal configuration files (.zshrc)
 - Optional macOS system defaults
 - Installation script for bootstrapping a new machine
 
