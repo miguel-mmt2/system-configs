@@ -1,6 +1,6 @@
 # Development Environment Setup
 
-This repository serves as a version-controlled backup of my development environment. It includes configuration files, package lists, editor settings, and automation scripts to streamline machine setup.
+This repository serves as a version-controlled backup of my development environment. It includes configuration files, package lists, editor settings, and automation scripts for my machine setup.
 ## Contents
 
 This repository includes:
