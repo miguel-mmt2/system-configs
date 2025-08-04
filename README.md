@@ -1,6 +1,7 @@
 # Development Environment Setup
 
 This repository serves as a version-controlled backup of my development environment. It includes configuration files, package lists, editor settings, and automation scripts for my machine setup.
+
 ## Contents
 
 This repository includes:
@@ -10,6 +11,7 @@ This repository includes:
 - **Terminal** configuration files (.zshrc)
 - Optional macOS system defaults
 - Installation script for bootstrapping a new machine
+- Ghostty terminal configuration (ghostty/config.yaml)
 
 ## Getting Started
 
@@ -33,7 +35,7 @@ Modify the script to match your system and preferences.
 
 To install packages listed in the Brewfile:
 
-    brew bundle install --file=Homebrew/Brewfile
+    brew bundle install --file=homebrew/Brewfile
 
 To generate a new Brewfile from your current setup:
 
@@ -83,8 +85,23 @@ This repository is modular and can be extended with additional tools such as:
 - oh-my-zsh
 - fzf
 - Docker or CLI utilities
+- Ghostty Terminal for secure terminal sharing and collaboration
 
-Use a structure that supports both global and OS-specific configurations as needed.
+Ghostty is a lightweight and secure tool that allows sharing your terminal sessions with others over SSH. It can be installed via Homebrew:
+
+    brew install ghostty
+
+### Ghostty Configuration
+
+A sample Ghostty configuration file is included at `ghostty/config.yaml`. 
+
+Adjust the settings like listening address, SSH keys, and session timeouts to suit your environment.
+
+To run Ghostty with this config:
+
+    ghostty --config ghostty/config.yaml
+
+This allows you to start a customized, secure terminal sharing server easily.
 
 ## License
 
