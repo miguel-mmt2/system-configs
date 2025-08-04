@@ -5,9 +5,9 @@ This repository serves as a version-controlled backup of my development environm
 
 This repository includes:
 
-- Homebrew package list (homebrew/Brewfile)
-- Visual Studio Code settings and extensions
-- Terminal configuration files (.zshrc)
+- **Homebrew** package list (homebrew/Brewfile)
+- **Visual Studio Code** settings and extensions
+- **Terminal** configuration files (.zshrc)
 - Optional macOS system defaults
 - Installation script for bootstrapping a new machine
 
