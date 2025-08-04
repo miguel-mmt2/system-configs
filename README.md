@@ -33,7 +33,7 @@ Modify the script to match your system and preferences.
 
 To install packages listed in the Brewfile:
 
-    brew bundle install --file=homebrew/Brewfile
+    brew bundle install --file=Homebrew/Brewfile
 
 To generate a new Brewfile from your current setup:
 
