@@ -1,112 +1,125 @@
 # Development Environment Setup
 
-This repository serves as a version-controlled backup of my development environment. It includes configuration files, package lists, editor settings, and automation scripts for my machine setup.
+This repository serves as a comprehensive, version-controlled backup of my development environment. It centralizes configuration files, package lists, editor settings, terminal customization, and automation scripts, enabling quick and consistent machine setup or migration.
 
 ## Contents
 
 This repository includes:
 
-- **Homebrew** package list (homebrew/Brewfile)
-- **Visual Studio Code** settings and extensions
-- **Terminal** configuration files (.zshrc)
-- Optional macOS system defaults
-- Installation script for bootstrapping a new machine
-- Ghostty terminal configuration (ghostty/config.yaml)
+- **Homebrew** package list (`homebrew/Brewfile`) to manage macOS packages and tools
+- **Visual Studio Code** settings and extensions (`vscode/`) for editor consistency
+- **Terminal** configuration files (`.zshrc` and related scripts) for shell customization
+- **Ghostty** terminal configuration (`ghostty/config.yaml`) for terminal emulator settings
+- Optional **macOS system defaults** scripts for system tweaks
+- Installation script (`install.sh`) to bootstrap and automate environment setup
 
 ## Getting Started
 
-1. Clone the Repository
+### 1. Clone the Repository
 
-Clone this repository to your development machine:
+Clone this repository to your preferred location on your development machine:
 
     git clone https://github.com/yourusername/your-repo-name.git ~/dev-setup
     cd ~/dev-setup
 
-2. Run the Setup Script
+### 2. Run the Setup Script
 
-The install.sh script automates initial setup tasks:
+The included `install.sh` automates initial configuration, including installing packages, setting up configs, and linking dotfiles.
 
     chmod +x install.sh
     ./install.sh
 
-Modify the script to match your system and preferences.
+> Review and customize `install.sh` to fit your system, preferences, or additional tools before running.
 
 ## Homebrew
 
-To install packages listed in the Brewfile:
+Manage packages easily with Homebrew:
 
-    brew bundle install --file=homebrew/Brewfile
+- **Install all packages from Brewfile:**
 
-To generate a new Brewfile from your current setup:
+      brew bundle install --file=homebrew/Brewfile
 
-    brew bundle dump --file=homebrew/Brewfile --force
+- **Export your current packages to Brewfile:**
+
+      brew bundle dump --file=homebrew/Brewfile --force
 
 ## Visual Studio Code
 
-Install Extensions:
+### Install Extensions
+
+Batch install VS Code extensions listed in `vscode/extensions.txt`:
 
     xargs -n 1 code --install-extension < vscode/extensions.txt
 
-Export Current Extensions:
+### Export Current Extensions
+
+Save your current VS Code extensions for future use:
 
     code --list-extensions > vscode/extensions.txt
 
-VS Code Preferences:
+### Preferences
 
-This repository contains:
-- vscode/settings.json
-- vscode/keybindings.json
+This repository stores:
 
-You can manually copy or symlink these to your VS Code user directory.
+- `vscode/settings.json`
+- `vscode/keybindings.json`
+
+Manually copy or symlink these files to your VS Code user settings directory to replicate your editor setup.
 
 ## Shell Configuration
 
-Shell setup files include:
-- .zshrc
-- .bash_profile
-- .aliases
-- .exports
+This repository backs up your shell environment configurations, including:
 
-Customize or symlink them as needed for your shell and operating system.
+- `.zshrc` — main shell config with aliases, functions, and theme setup
+- `.bash_profile` — optional bash profile settings
+- `.aliases` & `.exports` — additional reusable shell aliases and environment variables
 
-## Git Configuration
+You can customize or symlink these files according to your shell and OS.
 
-A base .gitconfig file is included. Extend it with credentials, aliases, or project-specific overrides.
+### Notable Shell Features
 
-## macOS Defaults (Optional)
+- **Oh My Zsh** with Powerlevel10k theme for a powerful prompt and enhanced usability
+- Handy aliases to speed up navigation, git, Docker, Python, ROS, and system management
+- Functions to manage Python virtual environments and Conda environments:
 
-If you're using macOS, you can script system preferences using macos-defaults.sh or integrate them into install.sh.
+  - `env <name>`: Create and activate a Python venv
+  - `act <name>`: Activate an existing Python venv
+  - `envlist [dir]`: List virtual environments in a directory
+  - `cenv <name>`: Create and activate a Conda environment
+  - `cact <name>`: Activate a Conda environment
 
-## Customization
+- Integration with `thefuck` for command correction
+- Enhanced directory listing using `eza` with icons and git integration
 
-This repository is modular and can be extended with additional tools such as:
-- tmux
-- neovim
-- oh-my-zsh
-- fzf
-- Docker or CLI utilities
-- Ghostty Terminal for secure terminal sharing and collaboration
+### Example Aliases
 
-Ghostty is a lightweight and secure tool that allows sharing your terminal sessions with others over SSH. It can be installed via Homebrew:
+    alias ..="cd .."
+    alias ll="eza -lah --icons --git"
+    alias update="brew update && brew upgrade && brew cleanup"
+    alias gs="git status"
+    alias dps="docker ps"
+    alias deact="deactivate"
 
-    brew install ghostty
+## Ghostty Terminal Configuration
 
-### Ghostty Configuration
+The `ghostty/config.yaml` file contains settings to customize the Ghostty terminal emulator, including appearance, layout, and behavior. This supports consistent terminal aesthetics and usability across machines.
 
-A sample Ghostty configuration file is included at `ghostty/config.yaml`. 
+## Customization & Extensibility
 
-Adjust the settings like listening address, SSH keys, and session timeouts to suit your environment.
+This repository is designed modularly, allowing you to extend it with additional tools and configurations such as:
 
-To run Ghostty with this config:
+- `tmux` for terminal multiplexing
+- `neovim` for advanced editing
+- Plugins and themes for Oh My Zsh
+- CLI utilities like `fzf`, `ripgrep`, or `bat`
+- Docker, Kubernetes, or cloud tooling setups
 
-    ghostty --config ghostty/config.yaml
-
-This allows you to start a customized, secure terminal sharing server easily.
+You can maintain global and OS-specific configurations under separate directories or conditional logic in scripts.
 
 ## License
 
-This repository is licensed under the MIT License. See the LICENSE file for more information.
+This repository is licensed under the MIT License. See the LICENSE file for details.
 
 ## Disclaimer
 
-These configurations reflect personal preferences and are intended as a starting point for customizing your own environment.
+These configurations reflect my personal workflow and preferences. Use them as a starting point and adapt to fit your needs.
