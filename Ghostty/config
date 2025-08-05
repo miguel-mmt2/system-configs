@@ -1,0 +1,23 @@
+# Appearance
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+theme = "tokyonight"
+font-family = "MesloLGS NF"
+font-size = 17
+cursor-color = "#ffcc00"
+selection-background = "#44475a"
+selection-foreground = "#f8f8f2"
+
+# Interface and Layout
+window-width = 800
+window-height = 600
+window-padding-x = 10
+window-padding-y = 10
+split-divider-color = "#444444"
+unfocused-split-opacity = 0.85
+background-opacity = 0.85
+
+# Behavior
+mouse-hide-while-typing = true
+confirm-close-surface = true
+
